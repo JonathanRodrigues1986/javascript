@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <H1>Pesquisa IBGE</H1>
+    <!-- <p>Digite seu nome:</p>
+    <input type="text" id="nome">
+    <input type="button" value="próximo"> -->
+    <p>Selecione seu sexo:</p>
+    <span id="masc">Masculino</span>
+    <span id="fem">Feminino</span>
+    <h2 id="resposta">Resposta</h2>
+
+    <script>
+        var a = window.document.getElementById('masc')
+        var b = window.document.getElementById('fem')
+        var nome = window.prompt('Qual seu nome?')
+        a.addEventListener('mouseenter', selecao)
+        a.addEventListener('mouseout', saida)
+        a.addEventListener('click', clicar)
+        /* b.addEventListener('mouseenter', selecao)
+        b.addEventListener('mouseout', saida) */
+
+        function selecao() {
+            a.innerText = 'Feminino'
+            b.innerText = 'Masculino'
+            b.style.background = 'green'
+            b.style.fontWeight = 'bolder'
+            b.style.color = 'white'
+            a.style.background = 'pink'
+            a.style.fontWeight = 'bolder'
+            a.style.color = 'gray'
+        }
+        function saida() {
+            a.innerText = 'Masculino'
+            b.innerText = 'Feminino'
+            b.style.background = 'pink'
+            b.style.fontWeight = 'bolder'
+            b.style.color = 'gray'
+
+            a.style.background = 'green'
+            a.style.fontWeight = 'bolder'
+            a.style.color = 'white'
+        }
+        function clicar() {
+            var res = window.document.getElementById('resposta')
+            var n = String(res.textContent)
+            res.innerHTML = `Huuuuummm, ${nome}... tô sabendo!!!`
+        }
+    </script>
+</body>
+</html>
